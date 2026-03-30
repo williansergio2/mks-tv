@@ -1,0 +1,145 @@
+/* ============================================================
+   MKS TV — Premium Dark Streaming / Luxury Tech
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+
+:root {
+  --radius: 0.75rem;
+
+  --background: #050510;
+  --foreground: #f5f5f5;
+
+  --card: #0d0a2e;
+  --card-foreground: #f5f5f5;
+
+  --primary: #3827F5;
+  --secondary: #1a1a2e;
+
+  --muted: #1a1a2e;
+  --muted-foreground: #999;
+
+  --border: rgba(56, 39, 245, 0.3);
+
+  --neon: #3827F5;
+  --neon-glow: rgba(56, 39, 245, 0.5);
+  --whatsapp: #25D366;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+
+@layer components {
+
+  .container {
+    width: 100%;
+    margin: auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1280px;
+      padding: 0 2rem;
+    }
+  }
+
+  /* Neon Button */
+  .btn-neon {
+    background: #3827F5;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(56, 39, 245, 0.6);
+    box-shadow: 0 0 20px rgba(56, 39, 245, 0.5);
+    transition: 0.3s;
+  }
+
+  .btn-neon:hover {
+    background: #4a3aff;
+    box-shadow: 0 0 40px rgba(56, 39, 245, 0.8);
+    transform: translateY(-2px);
+  }
+
+  /* WhatsApp */
+  .btn-whatsapp {
+    background: #25D366;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn-whatsapp:hover {
+    background: #20bd5a;
+    transform: translateY(-2px);
+  }
+
+  /* Glass Card */
+  .glass-card {
+    background: rgba(13, 10, 46, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(56, 39, 245, 0.2);
+    transition: 0.3s;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(56, 39, 245, 0.6);
+    box-shadow: 0 0 30px rgba(56, 39, 245, 0.2);
+    transform: translateY(-4px);
+  }
+
+  /* Neon Text */
+  .text-neon {
+    color: #3827F5;
+    text-shadow: 0 0 20px rgba(56, 39, 245, 0.8);
+  }
+
+  /* Divider */
+  .neon-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3827F5, transparent);
+  }
+
+  /* Animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+}
