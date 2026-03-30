@@ -4,7 +4,7 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 
 // =============================================================================
-// Manus Debug Collector (opcional)
+// Manus Debug Collector (pode remover depois se quiser)
 // =============================================================================
 
 const PROJECT_ROOT = process.cwd();
@@ -54,7 +54,7 @@ function vitePluginManusDebugCollector(): Plugin {
 export default defineConfig({
   plugins: [
     react(),
-    vitePluginManusDebugCollector(), // pode remover depois se quiser
+    vitePluginManusDebugCollector(), // pode remover se quiser
   ],
 
   root: path.resolve(PROJECT_ROOT, "client"),
@@ -67,7 +67,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: path.resolve(PROJECT_ROOT, "dist/public"), // ✅ CORRETO PRA VERCEL
+    outDir: path.resolve(PROJECT_ROOT, "dist"),
     emptyOutDir: true,
   },
 
